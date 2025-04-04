@@ -47,9 +47,9 @@ else:
 edad = int(input("Ingrese su edad: "))
 if edad>= 0 and edad <12:
     print("Usted es un Niño/a")
-elif edad>=12 and edad<18:
+elif 12 <= edad < 18:
     print("Usted es un Adolescente")
-elif edad>=18 and edad<30:
+elif 18 <= edad < 30:
     print("Usted es un Adulto/a joven")
 else: 
     print("Usted es un Adulto/a mayor") 
@@ -63,7 +63,7 @@ else:
 # como una lista o un string.            
 
 password = input("Ingrese su contraseña: ")
-if len(password)>= 8 and len(password)>= 14:
+if 8 <= len(password) <= 14:
     print("Ha ingresado una contraseña correcta")
 else:
     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres" )
@@ -96,12 +96,14 @@ else:
 from statistics import mode, median, mean
 import random
 numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
-if (mean(numeros_aleatorios) > median(numeros_aleatorios)) and (median(numeros_aleatorios) > mode(numeros_aleatorios)):
+if mean(numeros_aleatorios) > median(numeros_aleatorios) > mode(numeros_aleatorios):
     print("Hay Sesgo positivo o a la derecha") 
-elif (mean(numeros_aleatorios)< median(numeros_aleatorios)) and (median(numeros_aleatorios) < mode(numeros_aleatorios)):
+elif mean(numeros_aleatorios) < median(numeros_aleatorios) < mode(numeros_aleatorios):
     print("Hay Sesgo negativo o a la izquierda")
 elif mean(numeros_aleatorios) == median(numeros_aleatorios) == mode(numeros_aleatorios):
     print("sin sesgo")
+else: 
+    print("No se puede determinar si esta distribución tiene sesgo o no")    
 
 # Ejercicio 7
 # Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado 
@@ -109,7 +111,7 @@ elif mean(numeros_aleatorios) == median(numeros_aleatorios) == mode(numeros_alea
 # pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por 
 # pantalla.
 
-frase = input("Ingrese una frase o palabra: ").lower
+frase = input("Ingrese una frase o palabra: ").lower()
 if frase[-1] in "aeiou":
     frase += "!"
 print(frase)    
